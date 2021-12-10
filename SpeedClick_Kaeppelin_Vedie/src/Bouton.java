@@ -8,5 +8,13 @@
  * @author KAEPPELIN Mayeul
  */
 public class Bouton {
+    Bouton boutonCourant;
+    String Couleur ;
     
+    
+    public void Cellule(){
+        boutonCourant = null;
+        Couleur = "noir";
+        
+    }
 }
