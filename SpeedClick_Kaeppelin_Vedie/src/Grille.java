@@ -12,34 +12,37 @@ public class Grille {
     
     
     public Grille() {
-        BoutonJeu = new Bouton [4][4];
-             
-    for (int i = 0; i<4; i++){
-        for (int j = 0; j<4 ;j++){
-            BoutonJeu[i][j] = new Bouton ();
-            
-            
+        BoutonJeu = new Bouton [4][4]; //on crée notre première grille de jeu
+        for (int i = 0; i<4; i++){ // Bouton[0][0] en bas à gauche
+            for (int j = 0; j<4 ;j++){
+                BoutonJeu[i][j] = new Bouton (); // dimensions 4x4
+            }
+        }
     }
-}
-}
-    public void vidergrille(){
+    
+    public void eteindreGrille(){ //on eteint tous les boutons de la grille
         for (int i = 0; i<4; i++){
             for (int j = 0; j<4 ;j++){
-                BoutonJeu[i][j].boutonCourant = null;
-                
-        }
-            
-       }
-        
-        
+                BoutonJeu[i][j].Couleur = "noir"; 
+        }   
+       } 
     }
-    public String lireCouleur(int ligne , int col){
-        if ("vert".equals(BoutonJeu[ligne][col].lireCouleurbouton())){
-            return "vert";
+    
+    public boolean AllumerBouton(int ligne, int col) {
+        if (BoutonJeu[ligne][col].lireCouleurbouton()!="vert") {
+            BoutonJeu[ligne][col].Couleur="vert";
+            return true;
         }
-        else{
-            return "autre";
-        }
+        return false;
     }
+    
+    public boolean EteindreBouton(int ligne, int col) {
+        if (BoutonJeu[ligne][col].lireCouleurbouton()!="noir") {
+            BoutonJeu[ligne][col].Couleur="noir";
+            return true;
+        }
+        return false;
+    }
+    
     
 }
