@@ -9,4 +9,8 @@
  */
 public class Partie {
     Grille GrilleJeu=new Grille();
+    
+    public void debuterPartie() {
+        
+    }
 }
