@@ -12,11 +12,6 @@ public class Bouton {
     String Couleur ;
     
     
-    public void Cellule(){
-        boutonCourant = null;
-        Couleur = "noir";
-        
-    }
 
     public String lireCouleurbouton() {
         if (boutonCourant!= null){
@@ -25,5 +20,16 @@ public class Bouton {
         else{
             return "noir";
         }
+    }
+    
+    public boolean BoutonAllumé(int i,int j){
+        if (boutonCourant.Couleur=="vert") {
+            return true;
+        }
+        else {
+            return false;
+            
+        }
+        
     }
 }
