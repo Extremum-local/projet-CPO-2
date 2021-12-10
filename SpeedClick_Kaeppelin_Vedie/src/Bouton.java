@@ -17,4 +17,13 @@ public class Bouton {
         Couleur = "noir";
         
     }
+
+    public String lireCouleurbouton() {
+        if (boutonCourant!= null){
+            return boutonCourant.Couleur;
+        }
+        else{
+            return "noir";
+        }
+    }
 }

@@ -13,7 +13,7 @@ public class Grille {
     
     public Grille() {
         BoutonJeu = new Bouton [4][4];
-                
+             
     for (int i = 0; i<4; i++){
         for (int j = 0; j<4 ;j++){
             BoutonJeu[i][j] = new Bouton ();
@@ -22,4 +22,24 @@ public class Grille {
     }
 }
 }
+    public void vidergrille(){
+        for (int i = 0; i<4; i++){
+            for (int j = 0; j<4 ;j++){
+                BoutonJeu[i][j].boutonCourant = null;
+                
+        }
+            
+       }
+        
+        
+    }
+    public String lireCouleur(int ligne , int col){
+        if ("vert".equals(BoutonJeu[ligne][col].lireCouleurbouton())){
+            return "vert";
+        }
+        else{
+            return "autre";
+        }
+    }
+    
 }
