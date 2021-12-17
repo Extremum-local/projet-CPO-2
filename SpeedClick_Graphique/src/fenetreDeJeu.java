@@ -25,9 +25,88 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panneau_grille = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+        jButton20 = new javax.swing.JButton();
+        jButton19 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        infojoueur = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 0, 51));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        panneau_grille.setBackground(new java.awt.Color(102, 255, 153));
+        panneau_grille.setLayout(new java.awt.GridLayout(4, 4));
+
+        jButton1.setText("jButton1");
+        panneau_grille.add(jButton1);
+
+        jButton4.setText("jButton4");
+        panneau_grille.add(jButton4);
+
+        jButton9.setText("jButton9");
+        panneau_grille.add(jButton9);
+
+        jButton5.setText("jButton5");
+        panneau_grille.add(jButton5);
+
+        jButton7.setText("jButton7");
+        panneau_grille.add(jButton7);
+
+        jButton13.setText("jButton13");
+        panneau_grille.add(jButton13);
+
+        jButton12.setText("jButton12");
+        panneau_grille.add(jButton12);
+
+        jButton14.setText("jButton14");
+        panneau_grille.add(jButton14);
+
+        jButton16.setText("jButton16");
+        panneau_grille.add(jButton16);
+
+        jButton15.setText("jButton15");
+        panneau_grille.add(jButton15);
+
+        jButton11.setText("jButton11");
+        panneau_grille.add(jButton11);
+
+        jButton10.setText("jButton10");
+        panneau_grille.add(jButton10);
+
+        jButton17.setText("jButton17");
+        panneau_grille.add(jButton17);
+
+        jButton18.setText("jButton18");
+        panneau_grille.add(jButton18);
+
+        jButton20.setText("jButton20");
+        panneau_grille.add(jButton20);
+
+        jButton19.setText("jButton19");
+        panneau_grille.add(jButton19);
+
+        getContentPane().add(panneau_grille, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 580, 710));
+
+        jPanel3.setBackground(new java.awt.Color(102, 153, 255));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, 190, 300));
+
+        infojoueur.setBackground(new java.awt.Color(255, 153, 153));
+        getContentPane().add(infojoueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 60, 200, 170));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -68,5 +147,24 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel infojoueur;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
+    private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel panneau_grille;
     // End of variables declaration//GEN-END:variables
 }
