@@ -32,6 +32,12 @@ public class Partie {
     
     
     public void debuterPartie() {
+        initialiserPartie();
+        int tps=15;
+        while (tps>0) {
+            if 
+            
+        }
         
         
         
