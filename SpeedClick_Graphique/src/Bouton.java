@@ -17,4 +17,8 @@ public class Bouton {
         Couleur = "noir";
         
     }
+
+    String lireCouleurbouton() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

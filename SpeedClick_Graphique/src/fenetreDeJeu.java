@@ -15,159 +15,21 @@ import javax.swing.Timer;
  * @author vedie
  */
 public class fenetreDeJeu extends javax.swing.JFrame {
+    Grille GrilleJeu=new Grille();
+    Joueur JoueurCourant;
+        Bouton BoutonJeu[][];
+        Bouton boutonCourant;
+    String Couleur ;
 
     /**
      * Creates new form fenetreDeJeu
      */
     public fenetreDeJeu() {
         initComponents();
+        
     }
 
-    
-    
-       public class Grille {
-    Bouton BoutonJeu[][];
-    
-    
-    public Grille() {
-        BoutonJeu = new Bouton [4][4]; //on crée notre première grille de jeu
-        for (int i = 0; i<4; i++){ // Bouton[0][0] en bas à gauche
-            for (int j = 0; j<4 ;j++){
-                BoutonJeu[i][j] = new Bouton (); // dimensions 4x4
-            }
-        }
-    }
-    
-    public void eteindreGrille(){ //on eteint tous les boutons de la grille
-        for (int i = 0; i<4; i++){
-            for (int j = 0; j<4 ;j++){
-                BoutonJeu[i][j].Couleur = "noir"; 
-        }   
-       } 
-    }
-    
-    public boolean AllumerBouton(int ligne, int col) {
-        if (!"vert".equals(BoutonJeu[ligne][col].lireCouleurbouton())) {
-            BoutonJeu[ligne][col].Couleur="vert";
-            return true;
-        }
-        return false;
-    }
-    
-    public boolean EteindreBouton(int ligne, int col) {
-        if (!"noir".equals(BoutonJeu[ligne][col].lireCouleurbouton())) {
-            BoutonJeu[ligne][col].Couleur="noir";
-            return true;
-        }
-        return false;
-    }
-    
-    
-}
 
-    
-    
-    public class Bouton {
-    Bouton boutonCourant;
-    String Couleur ;
-    
-    
-    public String lireCouleurbouton() {
-        if (!"noir".equals(boutonCourant.Couleur)){ //on consid
-            return boutonCourant.Couleur; //on renvoie la couleur du bouton s'il est allumé
-        }
-        else{
-            return "noir"; //s'il ne l'est pas, on renvoie noir
-        }
-    }
-    
-    public boolean Allumé (Bouton boutonCourant) {
-        if (!"vert".equals(boutonCourant.Couleur)) {
-            boutonCourant.Couleur="vert"; //on allume le bouton s'il ne l'est pas déjà
-            return true;
-        }
-        else {
-            return false; //s'il l'est déjà, on return false
-        }
-        
-    }
-    
-    public boolean Eteindre(Bouton boutonCourant) {
-        if (!"noir".equals(boutonCourant.Couleur)) {
-            boutonCourant.Couleur="noir"; //on eteint le bouton s'il ne l'est pas déjà
-            return true;
-        }
-        else {
-            return false; //s'il l'est déjà, on return false
-        }
-
-    }
-    
-    public boolean BoutonAllumé(Bouton boutonCourant){ //on demande si le bouton est déjà allumé ou non
-        if ("vert".equals(boutonCourant.Couleur)) {
-            return true;
-        }
-        else {
-            return false;
-            
-        }
-        
-    }
-}
-
-    
-    
-    
-    
-public class Partie {
-    Grille GrilleJeu=new Grille();
-    Joueur JoueurCourant;
-    
-   
-    public void initialiserPartie() {
-       
-        GrilleJeu.eteindreGrille(); //on eteint toute la grille avant chaque début de partie
-        Scanner sc= new Scanner(System.in);
-        System.out.print("Pseudo: "); //on demande au joueur de rentrer son nom
-        JoueurCourant = new Joueur(sc.nextLine());
-        
-        Random r = new Random();
-        int lig1 = r.nextInt(4); //on choisit un nb entre 1 et 4 pour définir le bouton qui va s'allumer dès le début
-        int col1 = r.nextInt(4);
-        GrilleJeu.AllumerBouton(lig1, col1); //des le début, on aura un de nos boutons allumé.
-    }
-    
-    
-    
-    public void debuterPartie() {
-        initialiserPartie();
-        
-        
-        
-        
-    }
-}
-    public class fenetre_chrono extends javax.swing.JFrame {
-
-int nbSecondes = 0;
-    Timer monChrono;
-
-    public fenetre_chrono() {
-        initComponents();
-
-        
-        ActionListener tache_recurrente = new ActionListener() {
-            public void actionPerformed(ActionEvent e1) {
-                nbSecondes++;
-                txt_temps.setText(nbSecondes + "");
-            }
-        ;
-        };
-		/* instanciation du timer */
-	monChrono = new Timer(1000, tache_recurrente);
-    }
-    }
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -327,12 +189,17 @@ int nbSecondes = 0;
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
+         
+             //initialiserPartie();
              
-       
+             //GrilleJeu.AllumerBouton(1,1);
+            //panneau_grille.repaint(); 
+            
     }//GEN-LAST:event_jButton9ActionPerformed
        
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -379,6 +246,7 @@ int nbSecondes = 0;
     /**
      * @param args the command line arguments
      */
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -411,12 +279,106 @@ int nbSecondes = 0;
         });
     }
     
+    public void initialiserPartie() {
+       
+        //GrilleJeu.eteindreGrille(); //on eteint toute la grille avant chaque début de partie
+        Scanner sc= new Scanner(System.in);
+        //System.out.print("Pseudo: "); //on demande au joueur de rentrer son nom
+        JoueurCourant = new Joueur(sc.nextLine());
+        
+        Random r = new Random();
+        int lig1 = r.nextInt(4); //on choisit un nb entre 1 et 4 pour définir le bouton qui va s'allumer dès le début
+        int col1 = r.nextInt(4);
+        GrilleJeu.AllumerBouton(lig1, col1); //des le début, on aura un de nos boutons allumé.
+        panneau_grille.repaint();// permet de rafraichir l'écran afin de pouvoir jouer normalement. si l'on ne l'utilise pas il faut passer sur les cases a la souris afin de voir les jetons s'afficher
+
+    }
     
     
+    public void Grille() {
+        BoutonJeu = new Bouton [4][4]; //on crée notre première grille de jeu
+        for (int i = 0; i<4; i++){ // Bouton[0][0] en bas à gauche
+            for (int j = 0; j<4 ;j++){
+                BoutonJeu[i][j] = new Bouton (); // dimensions 4x4
+            }
+        }
+    }
     
+    public void eteindreGrille(){ //on eteint tous les boutons de la grille
+        for (int i = 0; i<4; i++){
+            for (int j = 0; j<4 ;j++){
+                BoutonJeu[i][j].Couleur = "noir"; 
+        }   
+       } 
+    }
     
+    public String lireCouleurbouton() {
+        if (boutonCourant.Couleur!= "noir"){ //on consid
+            return boutonCourant.Couleur; //on renvoie la couleur du bouton s'il est allumé
+        }
+        else{
+            return "noir"; //s'il ne l'est pas, on renvoie noir
+        }
+    }
     
+    public boolean AllumerBouton(int ligne, int col) {
+        if (BoutonJeu[ligne][col].lireCouleurbouton()!="vert") {
+            BoutonJeu[ligne][col].Couleur="vert";
+            return true;
+            
+        }
+        return false;
+    }
     
+    public boolean EteindreBouton(int ligne, int col) {
+        if (BoutonJeu[ligne][col].lireCouleurbouton()!="noir") {
+            BoutonJeu[ligne][col].Couleur="noir";
+            return true;
+        }
+        return false;
+    }
+    
+//    public String lireCouleurbouton() {
+//        if (boutonCourant.Couleur!= "noir"){ //on consid
+//            return boutonCourant.Couleur; //on renvoie la couleur du bouton s'il est allumé
+//        }
+//        else{
+//            return "noir"; //s'il ne l'est pas, on renvoie noir
+//        }
+//    }
+    
+    public boolean Allumé (Bouton boutonCourant) {
+        if (boutonCourant.Couleur!="vert") {
+            boutonCourant.Couleur="vert"; //on allume le bouton s'il ne l'est pas déjà
+            return true;
+        }
+        else {
+            return false; //s'il l'est déjà, on return false
+        }
+        
+    }
+    
+    public boolean Eteindre(Bouton boutonCourant) {
+        if (boutonCourant.Couleur!="noir") {
+            boutonCourant.Couleur="noir"; //on eteint le bouton s'il ne l'est pas déjà
+            return true;
+        }
+        else {
+            return false; //s'il l'est déjà, on return false
+        }
+
+    }
+    
+    public boolean BoutonAllumé(Bouton boutonCourant){ //on demande si le bouton est déjà allumé ou non
+        if (boutonCourant.Couleur=="vert") {
+            return true;
+        }
+        else {
+            return false;
+            
+        }
+        
+    }
     
     
     
