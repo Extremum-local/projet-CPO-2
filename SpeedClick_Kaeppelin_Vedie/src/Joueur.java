@@ -15,6 +15,7 @@ public class Joueur {
         nom = nomJoueur;
         
         
+        
     }
     
 }
