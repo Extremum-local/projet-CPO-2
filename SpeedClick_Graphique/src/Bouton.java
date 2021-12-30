@@ -12,13 +12,45 @@ public class Bouton {
     String Couleur ;
     
     
-    public void Cellule(){
-        boutonCourant = null;
-        Couleur = "noir";
+     public String lireCouleurbouton() {
+        if (boutonCourant.Couleur!= "noir"){ //on consid
+            return boutonCourant.Couleur; //on renvoie la couleur du bouton s'il est allumé
+        }
+        else{
+            return "noir"; //s'il ne l'est pas, on renvoie noir
+        }
+    }
+    
+    public boolean Allumé (Bouton boutonCourant) {
+        if (boutonCourant.Couleur!="vert") {
+            boutonCourant.Couleur="vert"; //on allume le bouton s'il ne l'est pas déjà
+            return true;
+        }
+        else {
+            return false; //s'il l'est déjà, on return false
+        }
         
     }
+    
+    public boolean Eteindre(Bouton boutonCourant) {
+        if (boutonCourant.Couleur!="noir") {
+            boutonCourant.Couleur="noir"; //on eteint le bouton s'il ne l'est pas déjà
+            return true;
+        }
+        else {
+            return false; //s'il l'est déjà, on return false
+        }
 
-    String lireCouleurbouton() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public boolean BoutonAllumé(Bouton boutonCourant){ //on demande si le bouton est déjà allumé ou non
+        if (boutonCourant.Couleur=="vert") {
+            return true;
+        }
+        else {
+            return false;
+            
+        }
+        
     }
 }
