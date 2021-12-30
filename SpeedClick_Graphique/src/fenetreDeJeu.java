@@ -394,11 +394,12 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         //GrilleJeu.eteindreGrille(); //on eteint toute la grille avant chaque début de partie
         Scanner sc= new Scanner(System.in);
         //System.out.print("Pseudo: "); //on demande au joueur de rentrer son nom
-        JoueurCourant = new Joueur(sc.nextLine());
         
         String nom_J = Pseudo.getText();
         Joueur J = new Joueur(nom_J);
         pseudoJoueur.setText(nom_J);
+        
+        JoueurCourant=J;
         
         Random r = new Random();
         int lig1 = r.nextInt(4); //on choisit un nb entre 1 et 4 pour définir le bouton qui va s'allumer dès le début
@@ -431,6 +432,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         for(int i=3; i>=0; i--) {
             for (int j=0; j<4; j++) {
                 GrilleJeu.eteindreGrille();
+                panneau_grille.repaint();
                 
             }
         }
@@ -444,11 +446,11 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                 chronoJoueur.setText(""+time);
                 if (time==0){
                     FinPartie();
-                    cancel();// stop le chrono au bout de 20 s
+                    cancel();// stoppe le chrono au bout de 20 s
                 }
                 time--;
             }
-        }, 1000, 1000);// delaire de 1s toute les secondes
+        }, 1000, 1000);
         return true;
 }
     
