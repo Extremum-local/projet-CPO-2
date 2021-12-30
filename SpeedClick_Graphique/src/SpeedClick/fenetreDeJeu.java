@@ -45,13 +45,13 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         
         scoreJoueur.setText(""+Compteur);
         
-       for (int i = 3; i >= 0; i--) {
-            for (int j = 0; j < 4; j++) { 
-                CelluleGraphique cellGraph = new CelluleGraphique();
+     //  for (int i = 3; i >= 0; i--) {
+    //..      for (int j = 0; j < 4; j++) { 
+         //       CelluleGraphique cellGraph = new CelluleGraphique();
                 //panneau_grille.add (cellGraph);
                 
-            }
-            }
+          //  }
+          //  }
     
     }
 
@@ -468,22 +468,22 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     
     
     public boolean Allumé (Bouton boutonCourant) {
-        if (boutonCourant.boutonAllumé==true) {
+        if (BoutonAllumé(boutonCourant)==true) {
             return false;
         }
         else {
-            boutonCourant.boutonAllumé=true; //on allume le bouton s'il ne l'est pas déjà
+            boutonAllumé=true; //on allume le bouton s'il ne l'est pas déjà
             return true; 
         }
         
     }
     
     public boolean Eteindre(Bouton boutonCourant) {
-        if (boutonCourant.boutonAllumé==false) {
+        if (BoutonAllumé(boutonCourant)==false) {
             return true;
         }
         else {
-            boutonCourant.boutonAllumé=false;//on eteint le bouton s'il ne l'est pas déjà
+            boutonAllumé=false; //on eteint le bouton s'il ne l'est pas déjà
             Compteur++;
             scoreJoueur.setText(""+Compteur);
             panneau_grille.repaint();
