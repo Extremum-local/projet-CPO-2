@@ -20,10 +20,19 @@ class CelluleGraphique {
         Bouton BoutonAssociee;
        ImageIcon img_vide = new javax.swing.ImageIcon(getClass().getResource("/images/rond.png"));
 
-       public CelluleGraphique(Bouton unBouton) {
-        BoutonAssociee = unBouton;
+       public CelluleGraphique() {
+        //BoutonAssociee = unBouton;
 
     }
+      
+    public void paintComponent(Graphics G) {
+        
+        
+        
+        
     }
+
+}
+    
        
 

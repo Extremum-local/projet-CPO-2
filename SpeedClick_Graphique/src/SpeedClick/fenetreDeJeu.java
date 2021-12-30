@@ -46,9 +46,15 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         
         scoreJoueur.setText(""+Compteur);
         
-        
+       for (int i = 3; i >= 0; i--) {
+            for (int j = 0; j < 4; j++) { 
+                CelluleGraphique cellGraph = new CelluleGraphique();
+                //panneau_grille.add (cellGraph);
+                
+            }
+            }
+    
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -357,6 +363,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         infopartie.setVisible(true);
         info_joueur.setVisible(true);
         Début.setVisible(false);
+        
     }//GEN-LAST:event_lancerPartieActionPerformed
        
     /**
