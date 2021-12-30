@@ -1,4 +1,8 @@
+package SpeedClick;
 
+
+import SpeedClick.Joueur;
+import SpeedClick.Grille;
 import java.util.Random;
 import java.util.Scanner;
 

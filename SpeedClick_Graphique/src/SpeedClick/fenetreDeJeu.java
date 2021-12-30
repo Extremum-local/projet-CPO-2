@@ -1,4 +1,9 @@
+package SpeedClick;
 
+
+import SpeedClick.Joueur;
+import SpeedClick.Grille;
+import SpeedClick.Bouton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
@@ -112,6 +117,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         });
         panneau_grille.add(jButton2);
 
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
