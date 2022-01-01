@@ -85,6 +85,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Lucida Calligraphy" size="11" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Chronom&#xe8;tre :"/>
           </Properties>
           <Constraints>
@@ -95,6 +98,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Lucida Calligraphy" size="11" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Score :"/>
           </Properties>
           <Constraints>

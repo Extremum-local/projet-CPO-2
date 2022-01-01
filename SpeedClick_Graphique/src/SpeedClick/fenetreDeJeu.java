@@ -110,9 +110,11 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         informations.setText("Informations partie :");
         infopartie.add(informations, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 160, 40));
 
+        jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 11)); // NOI18N
         jLabel2.setText("Chronomètre :");
         infopartie.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 11)); // NOI18N
         jLabel3.setText("Score :");
         infopartie.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
@@ -292,6 +294,8 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         for (int i = 3; i >= 0; i--) {
             for (int j = 0; j < 4; j++) { 
                 GrilleJeu.eteindreGrille();
+                Compteur=0;
+                scoreJoueur.setText("" + Compteur);
                 panneau_grille.repaint();
 
             }
