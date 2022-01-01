@@ -80,7 +80,10 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         scoreJoueur = new javax.swing.JLabel();
         chronoJoueur = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        lancement5 = new javax.swing.JButton();
+        lancement15 = new javax.swing.JButton();
+        lancement30 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         info_joueur = new javax.swing.JPanel();
         meilleur = new javax.swing.JLabel();
         nomJoueur = new javax.swing.JLabel();
@@ -91,11 +94,11 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         Pseudo = new javax.swing.JTextField();
-        lancerPartie1 = new javax.swing.JButton();
+        lancerPartieF = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        lancerPartie = new javax.swing.JButton();
-        lancerPartie2 = new javax.swing.JButton();
+        lancerPartieD = new javax.swing.JButton();
+        lancementPartieM = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -118,25 +121,47 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         infopartie.add(informations, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 160, 40));
 
         jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 11)); // NOI18N
-        jLabel2.setText("Chronomètre :");
-        infopartie.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        jLabel2.setText("Lancement :");
+        infopartie.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 11)); // NOI18N
         jLabel3.setText("Score :");
-        infopartie.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+        infopartie.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
         scoreJoueur.setText("scoreJoueur");
-        infopartie.add(scoreJoueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, -1, -1));
-        infopartie.add(chronoJoueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, -1, -1));
+        infopartie.add(scoreJoueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, -1, -1));
+        infopartie.add(chronoJoueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 40, -1));
 
-        jButton1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 11)); // NOI18N
-        jButton1.setText("Lancer la partie ");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        lancement5.setFont(new java.awt.Font("Lucida Calligraphy", 1, 10)); // NOI18N
+        lancement5.setText("5 secondes");
+        lancement5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                lancement5ActionPerformed(evt);
             }
         });
-        infopartie.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 150, -1));
+        infopartie.add(lancement5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 100, 25));
+
+        lancement15.setFont(new java.awt.Font("Lucida Calligraphy", 1, 10)); // NOI18N
+        lancement15.setText("15 secondes");
+        lancement15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lancement15ActionPerformed(evt);
+            }
+        });
+        infopartie.add(lancement15, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 100, 25));
+
+        lancement30.setFont(new java.awt.Font("Lucida Calligraphy", 1, 10)); // NOI18N
+        lancement30.setText("30 secondes");
+        lancement30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lancement30ActionPerformed(evt);
+            }
+        });
+        infopartie.add(lancement30, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 100, 25));
+
+        jLabel8.setFont(new java.awt.Font("Lucida Calligraphy", 1, 11)); // NOI18N
+        jLabel8.setText("Chronomètre :");
+        infopartie.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
         getContentPane().add(infopartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, 230, 240));
 
@@ -183,14 +208,14 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         });
         Début.add(Pseudo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 150, 40));
 
-        lancerPartie1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
-        lancerPartie1.setText("5 secondes");
-        lancerPartie1.addActionListener(new java.awt.event.ActionListener() {
+        lancerPartieF.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        lancerPartieF.setText("Facile");
+        lancerPartieF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lancerPartie1ActionPerformed(evt);
+                lancerPartieFActionPerformed(evt);
             }
         });
-        Début.add(lancerPartie1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, 50));
+        Début.add(lancerPartieF, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 120, 50));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         jLabel1.setText("Mayeul Kaeppelin");
@@ -200,30 +225,30 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         jLabel6.setText("Manon Védie");
         Début.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 70, 20));
 
-        lancerPartie.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
-        lancerPartie.setText("60 secondes");
-        lancerPartie.addActionListener(new java.awt.event.ActionListener() {
+        lancerPartieD.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        lancerPartieD.setText("Difficile");
+        lancerPartieD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lancerPartieActionPerformed(evt);
+                lancerPartieDActionPerformed(evt);
             }
         });
-        Début.add(lancerPartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 150, 50));
+        Début.add(lancerPartieD, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 150, 50));
 
-        lancerPartie2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
-        lancerPartie2.setText("20 secondes");
-        lancerPartie2.addActionListener(new java.awt.event.ActionListener() {
+        lancementPartieM.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        lancementPartieM.setText("Moyen");
+        lancementPartieM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lancerPartie2ActionPerformed(evt);
+                lancementPartieMActionPerformed(evt);
             }
         });
-        Début.add(lancerPartie2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 150, 50));
+        Début.add(lancementPartieM, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 150, 50));
 
         jLabel7.setFont(new java.awt.Font("Lucida Calligraphy", 0, 11)); // NOI18N
         jLabel7.setText("Clique sur les boutons rouges le plus rapidement possible...");
         Début.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 255));
-        Début.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, -1, 330));
+        Début.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, -1, 330));
 
         jPanel3.setBackground(new java.awt.Color(153, 153, 255));
         Début.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 330));
@@ -237,7 +262,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PseudoActionPerformed
 
-    private void lancerPartie1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancerPartie1ActionPerformed
+    private void lancerPartieFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancerPartieFActionPerformed
         // TODO add your handling code here:
         panneau_grille.setVisible(true); //On rend visible les panels de jeu
         infopartie.setVisible(true);
@@ -250,26 +275,64 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         JoueurCourant = J;
 
         pseudoJoueur.setText(nom_J);
-    }//GEN-LAST:event_lancerPartie1ActionPerformed
+    }//GEN-LAST:event_lancerPartieFActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void lancement5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancement5ActionPerformed
         // TODO add your handling code here:
         Compteur=0; //on remet le compteur de score à 0 à chaque début de partie
         scoreJoueur.setText("" + Compteur); //on l'affiche
         
         initialiserPartie();
         boolean chrono = false;
-        chrono = chronometre();
+        chrono = chronometre5();
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_lancement5ActionPerformed
 
-    private void lancerPartieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancerPartieActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lancerPartieActionPerformed
+    private void lancerPartieDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancerPartieDActionPerformed
+        panneau_grille.setVisible(true); //On rend visible les panels de jeu
+        infopartie.setVisible(true);
+        info_joueur.setVisible(true);
+        Début.setVisible(false); //on met invisible la page d'accueil
+        
 
-    private void lancerPartie2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancerPartie2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lancerPartie2ActionPerformed
+        String nom_J = Pseudo.getText();
+        Joueur J = new Joueur(nom_J);
+        JoueurCourant = J;
+
+        pseudoJoueur.setText(nom_J);
+    }//GEN-LAST:event_lancerPartieDActionPerformed
+
+    private void lancementPartieMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancementPartieMActionPerformed
+        panneau_grille.setVisible(true); //On rend visible les panels de jeu
+        infopartie.setVisible(true);
+        info_joueur.setVisible(true);
+        Début.setVisible(false); //on met invisible la page d'accueil
+        
+
+        String nom_J = Pseudo.getText();
+        Joueur J = new Joueur(nom_J);
+        JoueurCourant = J;
+
+        pseudoJoueur.setText(nom_J);
+    }//GEN-LAST:event_lancementPartieMActionPerformed
+
+    private void lancement15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancement15ActionPerformed
+        Compteur=0; //on remet le compteur de score à 0 à chaque début de partie
+        scoreJoueur.setText("" + Compteur); //on l'affiche
+        
+        initialiserPartie();
+        boolean chrono = false;
+        chrono = chronometre15();
+    }//GEN-LAST:event_lancement15ActionPerformed
+
+    private void lancement30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancement30ActionPerformed
+        Compteur=0; //on remet le compteur de score à 0 à chaque début de partie
+        scoreJoueur.setText("" + Compteur); //on l'affiche
+        
+        initialiserPartie();
+        boolean chrono = false;
+        chrono = chronometre30();
+    }//GEN-LAST:event_lancement30ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -361,7 +424,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         
     
 
-    public boolean chronometre() {
+    public boolean chronometre5() {
         Timer chrono = new Timer();
         chrono.schedule(new TimerTask() {
             int time = 5;
@@ -379,6 +442,42 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         return true;
     }
 
+    public boolean chronometre15() {
+        Timer chrono = new Timer();
+        chrono.schedule(new TimerTask() {
+            int time = 15;
+
+            @Override
+            public void run() {
+                chronoJoueur.setText("" + time);
+                if (time == 0) {
+                    FinPartie();
+                    cancel();// stoppe le chrono au bout de 15 s
+                }
+                time--;
+            }
+        }, 1000, 1000);
+        return true;
+    }
+    
+    public boolean chronometre30() {
+        Timer chrono = new Timer();
+        chrono.schedule(new TimerTask() {
+            int time = 30;
+
+            @Override
+            public void run() {
+                chronoJoueur.setText("" + time);
+                if (time == 0) {
+                    FinPartie();
+                    cancel();// stoppe le chrono au bout de 30 s
+                }
+                time--;
+            }
+        }, 1000, 1000);
+        return true;
+    }
+    
     public boolean Allumé(Bouton boutonCourant) {
         if (boutonCourant.BoutonAllumé() == true) {
             return false;
@@ -415,7 +514,6 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JPanel infopartie;
     private javax.swing.JLabel informations;
     private javax.swing.JLabel informations1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -423,11 +521,15 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JButton lancerPartie;
-    private javax.swing.JButton lancerPartie1;
-    private javax.swing.JButton lancerPartie2;
+    private javax.swing.JButton lancement15;
+    private javax.swing.JButton lancement30;
+    private javax.swing.JButton lancement5;
+    private javax.swing.JButton lancementPartieM;
+    private javax.swing.JButton lancerPartieD;
+    private javax.swing.JButton lancerPartieF;
     private javax.swing.JLabel meilleur;
     private javax.swing.JLabel meilleur_score;
     private javax.swing.JLabel nomJoueur;
