@@ -1,13 +1,9 @@
 package SpeedClick;
 
 
-import SpeedClick.Joueur;
-import SpeedClick.Grille;
-import SpeedClick.Bouton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
-import java.util.Scanner;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -44,28 +40,28 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         scoreJoueur.setText(""+Compteur); //on met un compteur à coté du score du joueur (emplacement scoreJoueur)
         
         
-       for (int i = 3; i >= 0; i--) {
-          for (int j = 0; j < 4; j++) { 
-                CelluleGraphique cellGraph = new CelluleGraphique(GrilleJeu.BoutonJeu[i][j]);
-                panneau_grille.add (cellGraph);
-                cellGraph.addActionListener(new java.awt.event.ActionListener() {
-                @Override
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    Bouton B = cellGraph.BoutonAssocie;
-                    if (B.BoutonAllumé()==true){
-                        Eteindre(B);
-                        Random r = new Random();
-                        int ligne_B = r.nextInt(4);
-                        int colonne_B = r.nextInt(4);
-                        GrilleJeu.AllumerBouton(ligne_B, colonne_B);
-                        panneau_grille.repaint();
-                    }else{
-                           
-                    }
-                    }
-                });
-            }
-       }
+    //   for (int i = 3; i >= 0; i--) {
+      //    for (int j = 0; j < 4; j++) { 
+        //        CelluleGraphique cellGraph = new CelluleGraphique(GrilleJeu.BoutonJeu[i][j]);
+//                panneau_grille.add (cellGraph);
+//                cellGraph.addActionListener(new java.awt.event.ActionListener() {
+//                @Override
+//                public void actionPerformed(java.awt.event.ActionEvent evt) {
+//                    Bouton B = cellGraph.BoutonAssocie;
+//                    if (B.BoutonAllumé()==true){
+//                        Eteindre(B);
+//                        Random r = new Random();
+//                        int ligne_B = r.nextInt(4);
+//                        int colonne_B = r.nextInt(4);
+//                        GrilleJeu.AllumerBouton(ligne_B, colonne_B);
+//                        panneau_grille.repaint();
+//                    }else{
+//                           
+//                    }
+//                    }
+//                });
+//            }
+//       }
     }
     
     
@@ -373,11 +369,14 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
     private void lancerPartieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancerPartieActionPerformed
         // TODO add your handling code here:
-        panneau_grille.setVisible(true);
+        panneau_grille.setVisible(true); //On rend visible les panels de jeu
         infopartie.setVisible(true);
         info_joueur.setVisible(true);
-        Début.setVisible(false);
+        Début.setVisible(false); //on met invisible la page d'accueil
         
+        initialiserPartie();
+        boolean chrono=false;
+        chrono=chronometre();
     }//GEN-LAST:event_lancerPartieActionPerformed
        
     /**
@@ -420,7 +419,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     public void initialiserPartie() {
        
         //GrilleJeu.eteindreGrille(); //on eteint toute la grille avant chaque début de partie
-        Scanner sc= new Scanner(System.in);
+        //Scanner sc= new Scanner(System.in);
         //System.out.print("Pseudo: "); //on demande au joueur de rentrer son nom
         
         String nom_J = Pseudo.getText();
