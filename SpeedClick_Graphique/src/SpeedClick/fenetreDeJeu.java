@@ -1,6 +1,5 @@
 package SpeedClick;
 
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
@@ -13,58 +12,56 @@ import java.util.TimerTask;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author vedie
  */
 public class fenetreDeJeu extends javax.swing.JFrame {
-    Grille GrilleJeu=new Grille();
+
+    Grille GrilleJeu = new Grille();
     Joueur JoueurCourant;
     Bouton BoutonJeu[][];
     boolean boutonAllumé;
-    static int second =0;
-    static int millisecond =0;
-    int Compteur=0;
-    Timer chronometre =new Timer();
+    static int second = 0;
+    static int millisecond = 0;
+    int Compteur = 0;
+    Timer chronometre = new Timer();
 
     /**
      * Creates new form fenetreDeJeu
      */
     public fenetreDeJeu() {
-       
+
         initComponents();
         panneau_grille.setVisible(false);
         infopartie.setVisible(false);
         info_joueur.setVisible(false); //on rend invisible certains panels tant que le joueur ne click pas sur démarrer.
-        scoreJoueur.setText(""+Compteur); //on met un compteur à coté du score du joueur (emplacement scoreJoueur)
-        
-        
-       for (int i = 3; i >= 0; i--) {
-          for (int j = 0; j < 4; j++) { 
+        scoreJoueur.setText("" + Compteur); //on met un compteur à coté du score du joueur (emplacement scoreJoueur)
+
+        for (int i = 3; i >= 0; i--) {
+            for (int j = 0; j <4; j++) {
+
                 CelluleGraphique cellGraph = new CelluleGraphique(GrilleJeu.BoutonJeu[i][j]);
-                panneau_grille.add (cellGraph);
+                panneau_grille.add(cellGraph);
                 cellGraph.addActionListener(new java.awt.event.ActionListener() {
-                @Override
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    Bouton B = cellGraph.BoutonAssocie;
-                    if (B.BoutonAllumé()==true){
-                        Eteindre(B);
-                        Random r = new Random();
-                        int ligne_B = r.nextInt(4);
-                        int colonne_B = r.nextInt(4);
-                        GrilleJeu.AllumerBouton(ligne_B, colonne_B);
-                        panneau_grille.repaint();
-                    }else{
-                           
-                    }
+                    @Override
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        Bouton B = cellGraph.BoutonAssocie;
+                        if (B.BoutonAllumé() == true) {
+                            Eteindre(B);
+                            Random r = new Random();
+                            int ligne_B = r.nextInt(4);
+                            int colonne_B = r.nextInt(4);
+                            GrilleJeu.AllumerBouton(ligne_B, colonne_B);
+                            panneau_grille.repaint();
+                        } else {
+
+                        }
                     }
                 });
             }
-       }
+        }
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -76,22 +73,6 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private void initComponents() {
 
         panneau_grille = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
         infopartie = new javax.swing.JPanel();
         informations = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -118,108 +99,6 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         panneau_grille.setBackground(new java.awt.Color(204, 204, 204));
         panneau_grille.setPreferredSize(new java.awt.Dimension(100, 100));
         panneau_grille.setLayout(new java.awt.GridLayout(4, 4));
-
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        panneau_grille.add(jButton1);
-
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        panneau_grille.add(jButton2);
-
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        panneau_grille.add(jButton3);
-        panneau_grille.add(jButton4);
-
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        panneau_grille.add(jButton5);
-
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        panneau_grille.add(jButton6);
-
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        panneau_grille.add(jButton7);
-        panneau_grille.add(jButton8);
-
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-        panneau_grille.add(jButton9);
-
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-        panneau_grille.add(jButton10);
-
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-        panneau_grille.add(jButton11);
-
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
-            }
-        });
-        panneau_grille.add(jButton12);
-
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
-            }
-        });
-        panneau_grille.add(jButton13);
-
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-        panneau_grille.add(jButton14);
-
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
-            }
-        });
-        panneau_grille.add(jButton15);
-
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
-            }
-        });
-        panneau_grille.add(jButton16);
-
         getContentPane().add(panneau_grille, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 400, 400));
 
         infopartie.setBackground(new java.awt.Color(102, 153, 255));
@@ -301,68 +180,6 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         setBounds(0, 0, 789, 491);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-
-        //initialiserPartie();
-
-        //GrilleJeu.AllumerBouton(1,1);
-        //panneau_grille.repaint();
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton15ActionPerformed
-
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
-
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton12ActionPerformed
-
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jButton14ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void PseudoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PseudoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PseudoActionPerformed
@@ -373,16 +190,15 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         infopartie.setVisible(true);
         info_joueur.setVisible(true);
         Début.setVisible(false); //on met invisible la page d'accueil
-        
+
         initialiserPartie();
-        boolean chrono=false;
-        chrono=chronometre();
+        boolean chrono = false;
+        chrono = chronometre();
     }//GEN-LAST:event_lancerPartieActionPerformed
-       
+
     /**
      * @param args the command line arguments
      */
-
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -415,19 +231,18 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             }
         });
     }
-    
+
     public void initialiserPartie() {
-       
+
         //GrilleJeu.eteindreGrille(); //on eteint toute la grille avant chaque début de partie
         //Scanner sc= new Scanner(System.in);
         //System.out.print("Pseudo: "); //on demande au joueur de rentrer son nom
-        
         String nom_J = Pseudo.getText();
         Joueur J = new Joueur(nom_J);
-        JoueurCourant=J;
-        
+        JoueurCourant = J;
+
         pseudoJoueur.setText(nom_J);
-       
+
         Random r = new Random();
         int lig1 = r.nextInt(4); //on choisit un nb entre 1 et 4 pour définir le bouton qui va s'allumer dès le début
         int col1 = r.nextInt(4);
@@ -435,43 +250,43 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         panneau_grille.repaint();// permet de rafraichir l'écran afin de pouvoir jouer normalement. si l'on ne l'utilise pas il faut passer sur les cases a la souris afin de voir les jetons s'afficher
 
     }
-    
-    
+
     public void Grille() {
-        BoutonJeu = new Bouton [4][4]; //on crée notre première grille de jeu
-        for (int i = 0; i<4; i++){ // Bouton[0][0] en bas à gauche
-            for (int j = 0; j<4 ;j++){
-                BoutonJeu[i][j] = new Bouton (); // dimensions 4x4
+        BoutonJeu = new Bouton[4][4]; //on crée notre première grille de jeu
+        for (int i = 0; i < 4; i++) { // Bouton[0][0] en bas à gauche
+            for (int j = 0; j < 4; j++) {
+                BoutonJeu[i][j] = new Bouton(); // dimensions 4x4
             }
         }
     }
-    
-    public void eteindreGrille(){ //on eteint tous les boutons de la grille
-        for (int i = 0; i<4; i++){
-            for (int j = 0; j<4 ;j++){
-                BoutonJeu[i][j].Couleur = "noir"; 
-        }   
-       } 
+
+    public void eteindreGrille() { //on eteint tous les boutons de la grille
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                BoutonJeu[i][j].Couleur = "noir";
+            }
+        }
     }
-   
 
     public void FinPartie() {
-        for(int i=3; i>=0; i--) {
-            for (int j=0; j<4; j++) {
+        for (int i = 3; i >= 0; i--) {
+            for (int j = 0; j < 4; j++) {
                 GrilleJeu.eteindreGrille();
                 panneau_grille.repaint();
-                
+
             }
         }
     }
-    public boolean chronometre(){
-    Timer chrono =new Timer();
+
+    public boolean chronometre() {
+        Timer chrono = new Timer();
         chrono.schedule(new TimerTask() {
-            int time=20;
+            int time = 20;
+
             @Override
             public void run() {
-                chronoJoueur.setText(""+time);
-                if (time==0){
+                chronoJoueur.setText("" + time);
+                if (time == 0) {
                     FinPartie();
                     cancel();// stoppe le chrono au bout de 20 s
                 }
@@ -479,40 +294,35 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             }
         }, 1000, 1000);
         return true;
-}
-    
-    
-    public boolean Allumé (Bouton boutonCourant) {
-        if (boutonCourant.BoutonAllumé()==true) {
-            return false;
-        }
-        else {
-            boutonAllumé=true; //on allume le bouton s'il ne l'est pas déjà
-            return true; 
-        }
-        
     }
-    
-    public boolean Eteindre(Bouton boutonCourant) {
-        if (boutonCourant.BoutonAllumé()==false) {
+
+    public boolean Allumé(Bouton boutonCourant) {
+        if (boutonCourant.BoutonAllumé() == true) {
+            return false;
+        } else {
+            boutonAllumé = true; //on allume le bouton s'il ne l'est pas déjà
             return true;
         }
-        else {
-            boutonAllumé=false; //on eteint le bouton s'il ne l'est pas déjà
-            Compteur++;
-            scoreJoueur.setText(""+Compteur);
-            panneau_grille.repaint();
-            return false; 
-        }
-        
+
     }
-    
-    public boolean BoutonAllumé(){ //on demande si le bouton est déjà allumé ou non
+
+    public boolean Eteindre(Bouton boutonCourant) {
+        if (boutonCourant.BoutonAllumé() == false) {
+            return true;
+        } else {
+            boutonAllumé = false; //on eteint le bouton s'il ne l'est pas déjà
+            Compteur++;
+            scoreJoueur.setText("" + Compteur);
+            panneau_grille.repaint();
+            return false;
+        }
+
+    }
+
+    public boolean BoutonAllumé() { //on demande si le bouton est déjà allumé ou non
         return boutonAllumé;
     }
 
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Début;
@@ -521,22 +331,6 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JPanel info_joueur;
     private javax.swing.JPanel infopartie;
     private javax.swing.JLabel informations;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -550,4 +344,4 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JLabel pseudoJoueur;
     private javax.swing.JLabel scoreJoueur;
     // End of variables declaration//GEN-END:variables
-    }  
+}
