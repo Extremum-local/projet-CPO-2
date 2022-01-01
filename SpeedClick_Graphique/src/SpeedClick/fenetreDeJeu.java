@@ -270,10 +270,15 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }
 
     public void FinPartie() {
+        for (int i = 3; i >= 0; i--) {
+            for (int j = 0; j < 4; j++) { 
                 GrilleJeu.eteindreGrille();
                 panneau_grille.repaint();
 
             }
+        }
+    }
+    
         
     
 
