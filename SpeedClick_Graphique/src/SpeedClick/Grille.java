@@ -25,12 +25,13 @@ public class Grille {
         }
     }
     
-    public void eteindreGrille(){ //on eteint tous les boutons de la grille
-        for (int i = 0; i<4; i++){
-            for (int j = 0; j<4 ;j++){
-                BoutonJeu[i][j].Couleur = "noir"; 
-        }   
-       } 
+    public void eteindreGrille() { //on eteint tous les boutons de la grille
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 3; j++) {
+                BoutonJeu[i][j].vide = null;
+                BoutonJeu[i][j].boutonAllumé = false;               
+            }
+        }
     }
     
     public boolean AllumerBouton(int ligne, int col) {

@@ -261,27 +261,26 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }
 
     public void eteindreGrille() { //on eteint tous les boutons de la grille
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
-                BoutonJeu[i][j].Couleur = "noir";
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 3; j++) {
+                BoutonJeu[i][j].vide = null;
+                BoutonJeu[i][j].boutonAllumé = false;               
             }
         }
     }
 
     public void FinPartie() {
-        for (int i = 3; i >= 0; i--) {
-            for (int j = 0; j < 4; j++) {
                 GrilleJeu.eteindreGrille();
                 panneau_grille.repaint();
 
             }
-        }
-    }
+        
+    
 
     public boolean chronometre() {
         Timer chrono = new Timer();
         chrono.schedule(new TimerTask() {
-            int time = 20;
+            int time = 5;
 
             @Override
             public void run() {

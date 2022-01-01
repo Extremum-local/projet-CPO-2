@@ -11,9 +11,14 @@ package SpeedClick;
  */
 public class Bouton {
     Bouton boutonCourant;
+    String vide;
     String Couleur ;
     boolean boutonAllumé;
     
+    Bouton() {
+    boutonAllumé=false;
+    vide=null;
+}
     
      public String lireCouleurbouton() {
         if (boutonCourant.Couleur!= "noir"){ //on consid
