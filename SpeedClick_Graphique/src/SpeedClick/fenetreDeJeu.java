@@ -79,10 +79,13 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         scoreJoueur = new javax.swing.JLabel();
         chronoJoueur = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         info_joueur = new javax.swing.JPanel();
         meilleur_score = new javax.swing.JLabel();
         nomJoueur = new javax.swing.JLabel();
         pseudoJoueur = new javax.swing.JLabel();
+        pseudoJoueur1 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         Début = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -120,6 +123,14 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         chronoJoueur.setText("chronoJoueur");
         infopartie.add(chronoJoueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, -1, -1));
 
+        jButton1.setText("LAncer la partie ");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        infopartie.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 130, -1));
+
         getContentPane().add(infopartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, 230, 240));
 
         info_joueur.setBackground(new java.awt.Color(0, 153, 204));
@@ -136,6 +147,12 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
         pseudoJoueur.setText("pseudoJoueur");
         info_joueur.add(pseudoJoueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
+
+        pseudoJoueur1.setText("pseudoJoueur");
+        info_joueur.add(pseudoJoueur1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
+
+        jLabel7.setText("meilleur score");
+        info_joueur.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 74, 80, 20));
 
         getContentPane().add(info_joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 230, 135));
 
@@ -191,10 +208,15 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         info_joueur.setVisible(true);
         Début.setVisible(false); //on met invisible la page d'accueil
 
+        
+    }//GEN-LAST:event_lancerPartieActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
         initialiserPartie();
         boolean chrono = false;
         chrono = chronometre();
-    }//GEN-LAST:event_lancerPartieActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -335,17 +357,20 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JPanel info_joueur;
     private javax.swing.JPanel infopartie;
     private javax.swing.JLabel informations;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JButton lancerPartie;
     private javax.swing.JLabel meilleur_score;
     private javax.swing.JLabel nomJoueur;
     private javax.swing.JPanel panneau_grille;
     private javax.swing.JLabel pseudoJoueur;
+    private javax.swing.JLabel pseudoJoueur1;
     private javax.swing.JLabel scoreJoueur;
     // End of variables declaration//GEN-END:variables
 }
