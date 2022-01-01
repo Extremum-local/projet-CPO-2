@@ -40,20 +40,35 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         initComponents();
         panneau_grille.setVisible(false);
         infopartie.setVisible(false);
-        info_joueur.setVisible(false);
+        info_joueur.setVisible(false); //on rend invisible certains panels tant que le joueur ne click pas sur démarrer.
+        scoreJoueur.setText(""+Compteur); //on met un compteur à coté du score du joueur (emplacement scoreJoueur)
         
         
-        scoreJoueur.setText(""+Compteur);
-        
-     //  for (int i = 3; i >= 0; i--) {
-    //..      for (int j = 0; j < 4; j++) { 
-         //       CelluleGraphique cellGraph = new CelluleGraphique();
-                //panneau_grille.add (cellGraph);
-                
-          //  }
-          //  }
-    
+       for (int i = 3; i >= 0; i--) {
+          for (int j = 0; j < 4; j++) { 
+                CelluleGraphique cellGraph = new CelluleGraphique(GrilleJeu.BoutonJeu[i][j]);
+                panneau_grille.add (cellGraph);
+                cellGraph.addActionListener(new java.awt.event.ActionListener() {
+                @Override
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    Bouton B = cellGraph.BoutonAssocie;
+                    if (B.BoutonAllumé()==true){
+                        Eteindre(B);
+                        Random r = new Random();
+                        int ligne_B = r.nextInt(4);
+                        int colonne_B = r.nextInt(4);
+                        GrilleJeu.AllumerBouton(ligne_B, colonne_B);
+                        panneau_grille.repaint();
+                    }else{
+                           
+                    }
+                    }
+                });
+            }
+       }
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -450,8 +465,8 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         }
     }
     public boolean chronometre(){
-    Timer chronometre =new Timer();
-        chronometre.schedule(new TimerTask() {
+    Timer chrono =new Timer();
+        chrono.schedule(new TimerTask() {
             int time=20;
             @Override
             public void run() {
@@ -468,7 +483,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     
     
     public boolean Allumé (Bouton boutonCourant) {
-        if (BoutonAllumé(boutonCourant)==true) {
+        if (boutonCourant.BoutonAllumé()==true) {
             return false;
         }
         else {
@@ -479,7 +494,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }
     
     public boolean Eteindre(Bouton boutonCourant) {
-        if (BoutonAllumé(boutonCourant)==false) {
+        if (boutonCourant.BoutonAllumé()==false) {
             return true;
         }
         else {
@@ -492,7 +507,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         
     }
     
-    public boolean BoutonAllumé(Bouton boutonCourant){ //on demande si le bouton est déjà allumé ou non
+    public boolean BoutonAllumé(){ //on demande si le bouton est déjà allumé ou non
         return boutonAllumé;
     }
 

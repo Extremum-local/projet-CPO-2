@@ -12,6 +12,7 @@ package SpeedClick;
 public class Bouton {
     Bouton boutonCourant;
     String Couleur ;
+    boolean boutonAllumé;
     
     
      public String lireCouleurbouton() {
@@ -24,35 +25,27 @@ public class Bouton {
     }
     
     public boolean Allumé (Bouton boutonCourant) {
-        if (boutonCourant.Couleur!="vert") {
-            boutonCourant.Couleur="vert"; //on allume le bouton s'il ne l'est pas déjà
-            return true;
-        }
-        else {
-            return false; //s'il l'est déjà, on return false
-        }
-        
-    }
-    
-    public boolean Eteindre(Bouton boutonCourant) {
-        if (boutonCourant.Couleur!="noir") {
-            boutonCourant.Couleur="noir"; //on eteint le bouton s'il ne l'est pas déjà
-            return true;
-        }
-        else {
-            return false; //s'il l'est déjà, on return false
-        }
-
-    }
-    
-    public boolean BoutonAllumé(Bouton boutonCourant){ //on demande si le bouton est déjà allumé ou non
-        if (boutonCourant.Couleur=="vert") {
-            return true;
-        }
-        else {
+        if (boutonCourant.BoutonAllumé()==true) {
             return false;
-            
+        }
+        else {
+            boutonAllumé=true; //on allume le bouton s'il ne l'est pas déjà
+            return true; 
         }
         
+    }
+    public boolean Eteindre(Bouton boutonCourant) {
+        if (boutonCourant.BoutonAllumé()==false) {
+            return true;
+        }
+        else {
+            boutonAllumé=false; //on eteint le bouton s'il ne l'est pas déjà
+            return false; 
+        }
+        
+    }
+    
+    public boolean BoutonAllumé(){ //on demande si le bouton est déjà allumé ou non
+        return boutonAllumé;
     }
 }

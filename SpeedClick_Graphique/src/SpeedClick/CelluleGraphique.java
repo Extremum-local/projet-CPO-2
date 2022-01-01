@@ -16,18 +16,27 @@ import javax.swing.JButton;
  *
  * @author KAEPPELIN Mayeul
  */
-class CelluleGraphique {
-        Bouton BoutonAssociee;
-       ImageIcon img_vide = new javax.swing.ImageIcon(getClass().getResource("/images/rond.png"));
+class CelluleGraphique extends JButton {
+        Bouton BoutonAssocie;
+       ImageIcon carre_rouge = new javax.swing.ImageIcon(getClass().getResource("/images/carre-rouge.jpg"));
+       ImageIcon carre_noir = new javax.swing.ImageIcon(getClass().getResource("/images/carre-noir.png"));
 
-       public CelluleGraphique() {
-        //BoutonAssociee = unBouton;
+       public CelluleGraphique(Bouton unBouton) {
+        BoutonAssocie = unBouton;
 
     }
       
+        @Override
     public void paintComponent(Graphics G) {
+        super.paintComponent(G);
         
-        
+        if (BoutonAssocie.BoutonAllumé()==true) {
+            setIcon(carre_rouge);
+            
+        }
+        else {
+            setIcon(carre_noir);
+        }
         
         
     }
