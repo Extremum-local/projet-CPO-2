@@ -310,7 +310,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         if (boutonCourant.BoutonAllumé() == false) {
             return true;
         } else {
-            boutonAllumé = false; //on eteint le bouton s'il ne l'est pas déjà
+            boutonCourant.boutonAllumé = false; //on eteint le bouton s'il ne l'est pas déjà
             Compteur++;
             scoreJoueur.setText("" + Compteur);
             panneau_grille.repaint();
