@@ -212,9 +212,11 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
         initialiserPartie();
         boolean chrono = false;
         chrono = chronometre();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
