@@ -90,15 +90,14 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         pseudoJoueur = new javax.swing.JLabel();
         meilleur_score = new javax.swing.JLabel();
         informations1 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         Début = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         Pseudo = new javax.swing.JTextField();
-        lancerPartieF = new javax.swing.JButton();
+        lancerPartie = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        lancerPartieD = new javax.swing.JButton();
-        lancementPartieM = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -118,11 +117,11 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
         informations.setFont(new java.awt.Font("Lucida Handwriting", 1, 12)); // NOI18N
         informations.setText("Informations partie :");
-        infopartie.add(informations, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 160, 40));
+        infopartie.add(informations, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 160, 40));
 
         jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 11)); // NOI18N
         jLabel2.setText("Lancement :");
-        infopartie.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
+        infopartie.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 90, 20));
 
         jLabel3.setFont(new java.awt.Font("Lucida Calligraphy", 1, 11)); // NOI18N
         jLabel3.setText("Score :");
@@ -148,7 +147,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                 lancement15ActionPerformed(evt);
             }
         });
-        infopartie.add(lancement15, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 100, 25));
+        infopartie.add(lancement15, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 100, 25));
 
         lancement30.setFont(new java.awt.Font("Lucida Calligraphy", 1, 10)); // NOI18N
         lancement30.setText("30 secondes");
@@ -157,13 +156,13 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                 lancement30ActionPerformed(evt);
             }
         });
-        infopartie.add(lancement30, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 100, 25));
+        infopartie.add(lancement30, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 100, 25));
 
         jLabel8.setFont(new java.awt.Font("Lucida Calligraphy", 1, 11)); // NOI18N
         jLabel8.setText("Chronomètre :");
         infopartie.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
-        getContentPane().add(infopartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, 230, 240));
+        getContentPane().add(infopartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, 240, 240));
 
         info_joueur.setBackground(new java.awt.Color(153, 153, 255));
         info_joueur.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -180,14 +179,17 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         pseudoJoueur.setText("pseudoJoueur");
         info_joueur.add(pseudoJoueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, 30));
 
-        meilleur_score.setText("meilleur_score");
-        info_joueur.add(meilleur_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 80, 30));
+        meilleur_score.setText("meilleur");
+        info_joueur.add(meilleur_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 50, 30));
 
         informations1.setFont(new java.awt.Font("Lucida Handwriting", 1, 12)); // NOI18N
         informations1.setText("Informations joueur :");
-        info_joueur.add(informations1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 160, 40));
+        info_joueur.add(informations1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 160, 40));
 
-        getContentPane().add(info_joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 230, 135));
+        jLabel9.setText("clic par minute");
+        info_joueur.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, 30));
+
+        getContentPane().add(info_joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 240, 135));
 
         Début.setBackground(new java.awt.Color(204, 204, 255));
         Début.setForeground(new java.awt.Color(204, 204, 255));
@@ -208,14 +210,14 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         });
         Début.add(Pseudo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 150, 40));
 
-        lancerPartieF.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
-        lancerPartieF.setText("Facile");
-        lancerPartieF.addActionListener(new java.awt.event.ActionListener() {
+        lancerPartie.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        lancerPartie.setText("Démarrer");
+        lancerPartie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lancerPartieFActionPerformed(evt);
+                lancerPartieActionPerformed(evt);
             }
         });
-        Début.add(lancerPartieF, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 120, 50));
+        Début.add(lancerPartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 190, 50));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         jLabel1.setText("Mayeul Kaeppelin");
@@ -224,24 +226,6 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         jLabel6.setText("Manon Védie");
         Début.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 70, 20));
-
-        lancerPartieD.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
-        lancerPartieD.setText("Difficile");
-        lancerPartieD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lancerPartieDActionPerformed(evt);
-            }
-        });
-        Début.add(lancerPartieD, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 150, 50));
-
-        lancementPartieM.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
-        lancementPartieM.setText("Moyen");
-        lancementPartieM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lancementPartieMActionPerformed(evt);
-            }
-        });
-        Début.add(lancementPartieM, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 150, 50));
 
         jLabel7.setFont(new java.awt.Font("Lucida Calligraphy", 0, 11)); // NOI18N
         jLabel7.setText("Clique sur les boutons rouges le plus rapidement possible...");
@@ -262,59 +246,30 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PseudoActionPerformed
 
-    private void lancerPartieFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancerPartieFActionPerformed
+    private void lancerPartieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancerPartieActionPerformed
         // TODO add your handling code here:
         panneau_grille.setVisible(true); //On rend visible les panels de jeu
         infopartie.setVisible(true);
         info_joueur.setVisible(true);
         Début.setVisible(false); //on met invisible la page d'accueil
         
-
         String nom_J = Pseudo.getText();
         Joueur J = new Joueur(nom_J);
         JoueurCourant = J;
-
         pseudoJoueur.setText(nom_J);
-    }//GEN-LAST:event_lancerPartieFActionPerformed
+        
+    }//GEN-LAST:event_lancerPartieActionPerformed
 
     private void lancement5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancement5ActionPerformed
         // TODO add your handling code here:
         Compteur=0; //on remet le compteur de score à 0 à chaque début de partie
         scoreJoueur.setText("" + Compteur); //on l'affiche
         
-        initialiserPartie();
+        initialiserPartie(); //faire une diff entre initialiser et débuter partie
         boolean chrono = false;
         chrono = chronometre5();
         
     }//GEN-LAST:event_lancement5ActionPerformed
-
-    private void lancerPartieDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancerPartieDActionPerformed
-        panneau_grille.setVisible(true); //On rend visible les panels de jeu
-        infopartie.setVisible(true);
-        info_joueur.setVisible(true);
-        Début.setVisible(false); //on met invisible la page d'accueil
-        
-
-        String nom_J = Pseudo.getText();
-        Joueur J = new Joueur(nom_J);
-        JoueurCourant = J;
-
-        pseudoJoueur.setText(nom_J);
-    }//GEN-LAST:event_lancerPartieDActionPerformed
-
-    private void lancementPartieMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancementPartieMActionPerformed
-        panneau_grille.setVisible(true); //On rend visible les panels de jeu
-        infopartie.setVisible(true);
-        info_joueur.setVisible(true);
-        Début.setVisible(false); //on met invisible la page d'accueil
-        
-
-        String nom_J = Pseudo.getText();
-        Joueur J = new Joueur(nom_J);
-        JoueurCourant = J;
-
-        pseudoJoueur.setText(nom_J);
-    }//GEN-LAST:event_lancementPartieMActionPerformed
 
     private void lancement15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancement15ActionPerformed
         Compteur=0; //on remet le compteur de score à 0 à chaque début de partie
@@ -379,7 +334,8 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         panneau_grille.repaint();// permet de rafraichir l'écran afin de pouvoir jouer normalement. si l'on ne l'utilise pas il faut passer sur les cases a la souris afin de voir les jetons s'afficher
 
     }
-
+   
+    
     public void Grille() {
         BoutonJeu = new Bouton[4][4]; //on crée notre première grille de jeu
         for (int i = 0; i < 4; i++) { // Bouton[0][0] en bas à gauche
@@ -398,29 +354,75 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         }
     }
     
-    public void MeilleurScore() {
+    public void MeilleurScore5() { // faire les mots par minute !!!
         String meilleursc_str=meilleur_score.getText(); //on récupère le texte stocké dans 'meilleur_score'
         String sc_str = scoreJoueur.getText(); //pareil avec scoreJoueur
         meilleursc = Integer.parseInt(meilleursc_str); //on transforme le string qu'on vient de récupérer en integer 
         int sc = Integer.parseInt(sc_str);
+        int vraiScore=(sc/5)*60; //calcule le score par minute
 
-        if (meilleursc <= sc) { //on peut donc après comparer nos deux integers.
-            meilleursc=sc; //si le nouveau score est meilleur que l'ancien meilleur score, il prend sa place
+        if (meilleursc <= vraiScore) { //on peut donc après comparer nos deux integers.
+            meilleursc=vraiScore; //si le nouveau score est meilleur que l'ancien meilleur score, il prend sa place
+        }
+                meilleur_score.setText(""+meilleursc); //on change l'affichage, on voit le meilleur score du joueur
+    }
+    
+    public void MeilleurScore15() { // faire les mots par minute !!!
+        String meilleursc_str=meilleur_score.getText(); //on récupère le texte stocké dans 'meilleur_score'
+        String sc_str = scoreJoueur.getText(); //pareil avec scoreJoueur
+        meilleursc = Integer.parseInt(meilleursc_str); //on transforme le string qu'on vient de récupérer en integer 
+        int sc = Integer.parseInt(sc_str);
+        int vraiScore=sc*4; //calcule le score par minute
+
+        if (meilleursc <= vraiScore) { //on peut donc après comparer nos deux integers.
+            meilleursc=vraiScore; //si le nouveau score est meilleur que l'ancien meilleur score, il prend sa place
+        }
+                meilleur_score.setText(""+meilleursc); //on change l'affichage, on voit le meilleur score du joueur
+    }
+    
+    public void MeilleurScore30() { // faire les mots par minute !!!
+        String meilleursc_str=meilleur_score.getText(); //on récupère le texte stocké dans 'meilleur_score'
+        String sc_str = scoreJoueur.getText(); //pareil avec scoreJoueur
+        meilleursc = Integer.parseInt(meilleursc_str); //on transforme le string qu'on vient de récupérer en integer 
+        int sc = Integer.parseInt(sc_str);
+        int vraiScore=sc*2; //calcule le score par minute
+
+        if (meilleursc <= vraiScore) { //on peut donc après comparer nos deux integers.
+            meilleursc=vraiScore; //si le nouveau score est meilleur que l'ancien meilleur score, il prend sa place
         }
                 meilleur_score.setText(""+meilleursc); //on change l'affichage, on voit le meilleur score du joueur
     }
 
-    public void FinPartie() {
+    public void FinPartie5() {
         for (int i = 3; i >= 0; i--) {
             for (int j = 0; j < 4; j++) { 
                 GrilleJeu.eteindreGrille();
-                MeilleurScore();
+                MeilleurScore5();
                 panneau_grille.repaint();
 
             }
         }
     }
-    
+    public void FinPartie15() {
+        for (int i = 3; i >= 0; i--) {
+            for (int j = 0; j < 4; j++) { 
+                GrilleJeu.eteindreGrille();
+                MeilleurScore15();
+                panneau_grille.repaint();
+
+            }
+        }
+    }
+    public void FinPartie30() {
+        for (int i = 3; i >= 0; i--) {
+            for (int j = 0; j < 4; j++) { 
+                GrilleJeu.eteindreGrille();
+                MeilleurScore30();
+                panneau_grille.repaint();
+
+            }
+        }
+    }
         
     
 
@@ -433,7 +435,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             public void run() {
                 chronoJoueur.setText("" + time);
                 if (time == 0) {
-                    FinPartie();
+                    FinPartie5();
                     cancel();// stoppe le chrono au bout de 5 s
                 }
                 time--;
@@ -451,7 +453,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             public void run() {
                 chronoJoueur.setText("" + time);
                 if (time == 0) {
-                    FinPartie();
+                    FinPartie15();
                     cancel();// stoppe le chrono au bout de 15 s
                 }
                 time--;
@@ -469,7 +471,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             public void run() {
                 chronoJoueur.setText("" + time);
                 if (time == 0) {
-                    FinPartie();
+                    FinPartie30();
                     cancel();// stoppe le chrono au bout de 30 s
                 }
                 time--;
@@ -522,14 +524,13 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JButton lancement15;
     private javax.swing.JButton lancement30;
     private javax.swing.JButton lancement5;
-    private javax.swing.JButton lancementPartieM;
-    private javax.swing.JButton lancerPartieD;
-    private javax.swing.JButton lancerPartieF;
+    private javax.swing.JButton lancerPartie;
     private javax.swing.JLabel meilleur;
     private javax.swing.JLabel meilleur_score;
     private javax.swing.JLabel nomJoueur;
