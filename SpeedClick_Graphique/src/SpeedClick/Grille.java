@@ -34,15 +34,15 @@ public class Grille {
     }
     
     public boolean AllumerBouton(int ligne, int col) {
-        if (!Cellules[ligne][col].taupe) {
-        BoutonJeu[ligne][col].BoutonAllumé() = true;;
+        if (!BoutonJeu[ligne][col].boutonAllumé) {
+        BoutonJeu[ligne][col].boutonAllumé = true;;
         return true;
     }
     return false;
     }
     
     public boolean EteindreBouton(int ligne, int col) {
-        if (BoutonJeu[ligne][col].lireCouleurbouton()!="noir") {
+        if (BoutonJeu[ligne][col].boutonAllumé=true) {
             BoutonJeu[ligne][col].Couleur="noir";
             return true;
         }
