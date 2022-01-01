@@ -2,7 +2,6 @@ package SpeedClick;
 
 
 
-import SpeedClick.Bouton;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -19,7 +18,7 @@ import javax.swing.JButton;
 class CelluleGraphique extends JButton {
         Bouton BoutonAssocie;
        ImageIcon carre_rouge = new javax.swing.ImageIcon(getClass().getResource("/images/carre-rouge.jpg"));
-       ImageIcon carre_noir = new javax.swing.ImageIcon(getClass().getResource("/images/carre-noir.png"));
+       ImageIcon carre_noir = new javax.swing.ImageIcon(getClass().getResource("/images/carre-noir.jpg"));
 
        public CelluleGraphique(Bouton unBouton) {
         BoutonAssocie = unBouton;

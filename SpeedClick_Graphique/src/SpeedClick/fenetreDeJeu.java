@@ -40,28 +40,28 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         scoreJoueur.setText(""+Compteur); //on met un compteur à coté du score du joueur (emplacement scoreJoueur)
         
         
-    //   for (int i = 3; i >= 0; i--) {
-      //    for (int j = 0; j < 4; j++) { 
-        //        CelluleGraphique cellGraph = new CelluleGraphique(GrilleJeu.BoutonJeu[i][j]);
-//                panneau_grille.add (cellGraph);
-//                cellGraph.addActionListener(new java.awt.event.ActionListener() {
-//                @Override
-//                public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                    Bouton B = cellGraph.BoutonAssocie;
-//                    if (B.BoutonAllumé()==true){
-//                        Eteindre(B);
-//                        Random r = new Random();
-//                        int ligne_B = r.nextInt(4);
-//                        int colonne_B = r.nextInt(4);
-//                        GrilleJeu.AllumerBouton(ligne_B, colonne_B);
-//                        panneau_grille.repaint();
-//                    }else{
-//                           
-//                    }
-//                    }
-//                });
-//            }
-//       }
+       for (int i = 3; i >= 0; i--) {
+          for (int j = 0; j < 4; j++) { 
+                CelluleGraphique cellGraph = new CelluleGraphique(GrilleJeu.BoutonJeu[i][j]);
+                panneau_grille.add (cellGraph);
+                cellGraph.addActionListener(new java.awt.event.ActionListener() {
+                @Override
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    Bouton B = cellGraph.BoutonAssocie;
+                    if (B.BoutonAllumé()==true){
+                        Eteindre(B);
+                        Random r = new Random();
+                        int ligne_B = r.nextInt(4);
+                        int colonne_B = r.nextInt(4);
+                        GrilleJeu.AllumerBouton(ligne_B, colonne_B);
+                        panneau_grille.repaint();
+                    }else{
+                           
+                    }
+                    }
+                });
+            }
+       }
     }
     
     
