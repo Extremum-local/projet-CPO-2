@@ -26,7 +26,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     static int millisecond = 0;
     int Compteur = 0;
     Timer chronometre = new Timer();
-
+    int meilleursc = 0;
     /**
      * Creates new form fenetreDeJeu
      */
@@ -37,7 +37,8 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         infopartie.setVisible(false);
         info_joueur.setVisible(false); //on rend invisible certains panels tant que le joueur ne click pas sur démarrer.
         scoreJoueur.setText("" + Compteur); //on met un compteur à coté du score du joueur (emplacement scoreJoueur)
-
+        meilleur_score.setText("" + meilleursc);
+        
         for (int i = 3; i >= 0; i--) {
             for (int j = 0; j <4; j++) {
 
@@ -120,8 +121,6 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
         scoreJoueur.setText("scoreJoueur");
         infopartie.add(scoreJoueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, -1, -1));
-
-        chronoJoueur.setText("chronoJoueur");
         infopartie.add(chronoJoueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 11)); // NOI18N
@@ -207,7 +206,11 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         info_joueur.setVisible(true);
         Début.setVisible(false); //on met invisible la page d'accueil
 
-        
+        String nom_J = Pseudo.getText();
+        Joueur J = new Joueur(nom_J);
+        JoueurCourant = J;
+
+        pseudoJoueur.setText(nom_J);
     }//GEN-LAST:event_lancerPartieActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -257,15 +260,6 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
     public void initialiserPartie() {
 
-        //GrilleJeu.eteindreGrille(); //on eteint toute la grille avant chaque début de partie
-        //Scanner sc= new Scanner(System.in);
-        //System.out.print("Pseudo: "); //on demande au joueur de rentrer son nom
-        String nom_J = Pseudo.getText();
-        Joueur J = new Joueur(nom_J);
-        JoueurCourant = J;
-
-        pseudoJoueur.setText(nom_J);
-
         Random r = new Random();
         int lig1 = r.nextInt(4); //on choisit un nb entre 1 et 4 pour définir le bouton qui va s'allumer dès le début
         int col1 = r.nextInt(4);
@@ -291,12 +285,26 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             }
         }
     }
+    
+    public void MeilleurScore() {
+        String meilleursc_str=meilleur_score.getText();
+        String sc_str = scoreJoueur.getText();
+        meilleursc = Integer.parseInt(meilleursc_str);
+        int sc = Integer.parseInt(sc_str);
+
+        if (meilleursc <= sc) {
+            meilleursc=sc;
+        }
+                meilleur_score.setText(""+meilleursc); //faire un if compteur > meilleur
+    }
 
     public void FinPartie() {
         for (int i = 3; i >= 0; i--) {
             for (int j = 0; j < 4; j++) { 
                 GrilleJeu.eteindreGrille();
-                Compteur=0;
+                MeilleurScore();
+                Compteur=0; //on remet le compteur à 0 à chaque fin de partie
+                
                 scoreJoueur.setText("" + Compteur);
                 panneau_grille.repaint();
 
@@ -317,7 +325,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                 chronoJoueur.setText("" + time);
                 if (time == 0) {
                     FinPartie();
-                    cancel();// stoppe le chrono au bout de 20 s
+                    cancel();// stoppe le chrono au bout de 5 s
                 }
                 time--;
             }

@@ -11,7 +11,6 @@ package SpeedClick;
  */
 public class Joueur {
     String nom;
-    int Score ;
     
     public Joueur(String nomJoueur){
         nom = nomJoueur;

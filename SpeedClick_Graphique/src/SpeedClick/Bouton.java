@@ -12,7 +12,6 @@ package SpeedClick;
 public class Bouton {
     Bouton boutonCourant;
     String vide;
-    String Couleur ;
     boolean boutonAllumé;
     
     Bouton() {
@@ -20,14 +19,6 @@ public class Bouton {
     vide=null;
 }
     
-     public String lireCouleurbouton() {
-        if (boutonCourant.Couleur!= "noir"){ //on consid
-            return boutonCourant.Couleur; //on renvoie la couleur du bouton s'il est allumé
-        }
-        else{
-            return "noir"; //s'il ne l'est pas, on renvoie noir
-        }
-    }
     
     public boolean Allumé (Bouton boutonCourant) {
         if (boutonCourant.BoutonAllumé()==true) {
