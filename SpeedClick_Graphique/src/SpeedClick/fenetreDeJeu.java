@@ -359,7 +359,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         String sc_str = scoreJoueur.getText(); //pareil avec scoreJoueur
         meilleursc = Integer.parseInt(meilleursc_str); //on transforme le string qu'on vient de récupérer en integer 
         int sc = Integer.parseInt(sc_str);
-        int vraiScore=(sc/5)*60; //calcule le score par minute
+        int vraiScore=sc*12; //calcule le score par minute
 
         if (meilleursc <= vraiScore) { //on peut donc après comparer nos deux integers.
             meilleursc=vraiScore; //si le nouveau score est meilleur que l'ancien meilleur score, il prend sa place
