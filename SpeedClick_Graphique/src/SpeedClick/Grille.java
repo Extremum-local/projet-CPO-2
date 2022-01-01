@@ -42,11 +42,9 @@ public class Grille {
     }
     
     public boolean EteindreBouton(int ligne, int col) {
-        if (BoutonJeu[ligne][col].boutonAllumé=true) {
-            BoutonJeu[ligne][col].Couleur="noir";
+            BoutonJeu[ligne][col].boutonAllumé=false;
             return true;
-        }
-        return false;
+        
     }
     
     
