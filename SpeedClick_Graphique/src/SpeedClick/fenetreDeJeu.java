@@ -325,6 +325,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }//GEN-LAST:event_lancement30ActionPerformed
 
     private void chgmtJoueurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chgmtJoueurActionPerformed
+        GrilleJeu.eteindreGrille();
         panneau_grille.setVisible(false);
         infopartie.setVisible(false);
         info_joueur.setVisible(false);
@@ -333,6 +334,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         meilleursc=0;
         scoreJoueur.setText("" + Compteur); //on met un compteur à coté du score du joueur (emplacement scoreJoueur)
         meilleur_score.setText("" + meilleursc);
+        
     }//GEN-LAST:event_chgmtJoueurActionPerformed
 
     /**
@@ -392,10 +394,10 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }
 
     public void eteindreGrille() { //on eteint tous les boutons de la grille
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 3; j++) {
-                BoutonJeu[i][j].vide = null;
-                BoutonJeu[i][j].boutonAllumé = false;               
+        for (int i = 3; i >= 0; i--) {
+            for (int j = 0; j < 4; j++) {
+               // BoutonJeu[i][j].vide = null;
+                GrilleJeu.BoutonJeu[i][j].boutonAllumé = false;               
             }
         }
     }
@@ -440,54 +442,46 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }
 
     public void FinPartie5() {
-        for (int i = 3; i >= 0; i--) {
-            for (int j = 0; j < 4; j++) { 
-                GrilleJeu.eteindreGrille();
-                lancement15.setVisible(true);
-                lancement5.setVisible(true);
-                lancement30.setVisible(true);
-                Textlancemt.setVisible(true);
-                chgmtJoueur.setVisible(true);
-                a_toi.setVisible(false);
-                MeilleurScore5();
-                panneau_grille.repaint();
+        GrilleJeu.eteindreGrille();
+        lancement15.setVisible(true);
+        lancement5.setVisible(true);
+        lancement30.setVisible(true);
+        Textlancemt.setVisible(true);
+        chgmtJoueur.setVisible(true);
+        a_toi.setVisible(false);
+        MeilleurScore5();
+        panneau_grille.repaint();
 
-            }
-        }
+            
+        
     }
     public void FinPartie15() {
-        for (int i = 3; i >= 0; i--) {
-            for (int j = 0; j < 4; j++) { 
-                GrilleJeu.eteindreGrille();
-                GrilleJeu.eteindreGrille();
-                lancement15.setVisible(true);
-                lancement5.setVisible(true);
-                lancement30.setVisible(true);
-                Textlancemt.setVisible(true);
-                chgmtJoueur.setVisible(true);
-                a_toi.setVisible(false);
-                MeilleurScore15();
-                panneau_grille.repaint();
+        GrilleJeu.eteindreGrille();
+        lancement15.setVisible(true);
+        lancement5.setVisible(true);
+        lancement30.setVisible(true);
+        Textlancemt.setVisible(true);
+        chgmtJoueur.setVisible(true);
+        a_toi.setVisible(false);
+        MeilleurScore15();
+        panneau_grille.repaint();
 
-            }
-        }
+            
+        
     }
     public void FinPartie30() {
-        for (int i = 3; i >= 0; i--) {
-            for (int j = 0; j < 4; j++) { 
-                GrilleJeu.eteindreGrille();
-                GrilleJeu.eteindreGrille();
-                lancement15.setVisible(true);
-                lancement5.setVisible(true);
-                lancement30.setVisible(true);
-                Textlancemt.setVisible(true);
-                chgmtJoueur.setVisible(true);
-                a_toi.setVisible(false);
-                MeilleurScore30();
-                panneau_grille.repaint();
+        GrilleJeu.eteindreGrille();
+        lancement15.setVisible(true);
+        lancement5.setVisible(true);
+        lancement30.setVisible(true);
+        Textlancemt.setVisible(true);
+        chgmtJoueur.setVisible(true);
+        a_toi.setVisible(false);
+        MeilleurScore30();
+        panneau_grille.repaint();
 
-            }
-        }
+            
+        
     }
         
     
