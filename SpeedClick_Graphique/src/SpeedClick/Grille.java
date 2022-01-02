@@ -25,21 +25,20 @@ public class Grille {
     public void eteindreGrille() { //on eteint tous les boutons de la grille
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 3; j++) {
-                BoutonJeu[i][j].vide = null;
                 EteindreBouton(i,j);             
             }
         }
     }
     
-    public boolean AllumerBouton(int ligne, int col) {
-        if (!BoutonJeu[ligne][col].boutonAllumé) {
-        BoutonJeu[ligne][col].boutonAllumé = true;;
+    public boolean AllumerBouton(int ligne, int col) { //permet d'allumer un bouton en connaissant sa ligne et sa colonne dans la grille
+        if (!BoutonJeu[ligne][col].boutonAllumé) { // si il n'est pas allumé
+        BoutonJeu[ligne][col].boutonAllumé = true; //on l'allume
         return true;
     }
     return false;
     }
     
-    public boolean EteindreBouton(int ligne, int col) {
+    public boolean EteindreBouton(int ligne, int col) { // permet d'éteindre le bouton dont les coordonnées sont connues
             BoutonJeu[ligne][col].boutonAllumé=false;
             return true;
         
