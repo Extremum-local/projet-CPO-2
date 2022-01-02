@@ -394,10 +394,10 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }
 
     public void eteindreGrille() { //on eteint tous les boutons de la grille
-        for (int i = 3; i >= 0; i--) {
+        for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                // BoutonJeu[i][j].vide = null;
-                GrilleJeu.BoutonJeu[i][j].boutonAllumé = false;               
+                GrilleJeu.EteindreBouton(i, j);
             }
         }
     }
