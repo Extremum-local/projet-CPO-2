@@ -11,12 +11,10 @@ package SpeedClick;
  */
 public class Bouton { // création de la classe bouton 
     Bouton boutonCourant;// création de boutonCourant qui est un objet de type Bouton
-    String vide;
     boolean boutonAllumé;// le bouton sera donc allumé ou pas 
     
     Bouton() { // constructeur Bouton qui possède le même nom que la classe
     boutonAllumé=false;
-    vide=null;// si le bouton n'a pas de "valeur" a proprement parler sa veleur est "null" 
 }
     
     
