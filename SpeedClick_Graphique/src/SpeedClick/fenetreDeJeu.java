@@ -18,7 +18,7 @@ import java.util.TimerTask;
  */
 public class fenetreDeJeu extends javax.swing.JFrame {
 
-    Grille GrilleJeu = new Grille();
+    Grille GrilleJeu = new Grille(); // on crée nos différents éléments nédessaires au jeu
     Joueur JoueurCourant;
     Bouton BoutonJeu[][];
     boolean boutonAllumé;
@@ -37,7 +37,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         infopartie.setVisible(false);
         info_joueur.setVisible(false); //on rend invisible certains panels tant que le joueur ne click pas sur démarrer.
         scoreJoueur.setText("" + Compteur); //on met un compteur à coté du score du joueur (emplacement scoreJoueur)
-        meilleur_score.setText("" + meilleursc);
+        meilleur_score.setText("" + meilleursc); //setText permet d'afficher un texte à la place d'un jlabel.
         
         for (int i = 3; i >= 0; i--) {
             for (int j = 0; j <4; j++) {
@@ -53,7 +53,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                             Random r = new Random();
                             int ligne_B = r.nextInt(4);
                             int colonne_B = r.nextInt(4);
-                            GrilleJeu.AllumerBouton(ligne_B, colonne_B);
+                            GrilleJeu.AllumerBouton(ligne_B, colonne_B); //on allume un bouton dès le début
                             panneau_grille.repaint();
                         } else {
 
@@ -263,16 +263,16 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
     private void lancerPartieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancerPartieActionPerformed
         // TODO add your handling code here:
-        panneau_grille.setVisible(true); //On rend visible les panels de jeu
+        panneau_grille.setVisible(true); //On rend visible les panels de jeu lors du lancement de la partie
         infopartie.setVisible(true);
         info_joueur.setVisible(true);
         Début.setVisible(false); //on met invisible la page d'accueil
         a_toi.setVisible(false);
         
-        String nom_J = Pseudo.getText();
+        String nom_J = Pseudo.getText(); // on récupère le texte que le joueur a mis en pseudo
         Joueur J = new Joueur(nom_J);
         JoueurCourant = J;
-        pseudoJoueur.setText(nom_J);
+        pseudoJoueur.setText(nom_J); // et on l'écrit à côté du nom du joueur
         
     }//GEN-LAST:event_lancerPartieActionPerformed
 
@@ -283,18 +283,18 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         
         initialiserPartie(); //faire une diff entre initialiser et débuter partie
         boolean chrono = false;
-        chrono = chronometre5();
-        lancement15.setVisible(false);
+        chrono = chronometre5(); //chrono de 5 secondes lancé
+        lancement15.setVisible(false); //on rend inutilisables les boutons pendant une partie 
         lancement5.setVisible(false);
         lancement30.setVisible(false);
         Textlancemt.setVisible(false);
         chgmtJoueur.setVisible(false);
-        a_toi.setVisible(true);
+        a_toi.setVisible(true); 
     }//GEN-LAST:event_lancement5ActionPerformed
 
     private void lancement15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancement15ActionPerformed
-        Compteur=0; //on remet le compteur de score à 0 à chaque début de partie
-        scoreJoueur.setText("" + Compteur); //on l'affiche
+        Compteur=0; //on fait de même pour 15 secondes
+        scoreJoueur.setText("" + Compteur); 
         
         initialiserPartie();
         boolean chrono = false;
@@ -309,8 +309,8 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }//GEN-LAST:event_lancement15ActionPerformed
 
     private void lancement30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lancement30ActionPerformed
-        Compteur=0; //on remet le compteur de score à 0 à chaque début de partie
-        scoreJoueur.setText("" + Compteur); //on l'affiche
+        Compteur=0; //on fait de même mais pour 30 secondes
+        scoreJoueur.setText("" + Compteur); 
         
         initialiserPartie();
         boolean chrono = false;
@@ -325,12 +325,12 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }//GEN-LAST:event_lancement30ActionPerformed
 
     private void chgmtJoueurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chgmtJoueurActionPerformed
-        GrilleJeu.eteindreGrille();
-        panneau_grille.setVisible(false);
+        GrilleJeu.eteindreGrille(); //on éteint la grille avant de changer de joueur
+        panneau_grille.setVisible(false); // on remet tous les panels de jeu invisibles
         infopartie.setVisible(false);
         info_joueur.setVisible(false);
-        Début.setVisible(true);
-        Compteur=0;
+        Début.setVisible(true); //et on rend visible la page d'accueil afin de changer de joueur
+        Compteur=0; //on remet donc les compteurs à 0
         meilleursc=0;
         scoreJoueur.setText("" + Compteur); //on met un compteur à coté du score du joueur (emplacement scoreJoueur)
         meilleur_score.setText("" + meilleursc);
@@ -385,7 +385,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
    
     
     public void Grille() {
-        BoutonJeu = new Bouton[4][4]; //on crée notre première grille de jeu
+        BoutonJeu = new Bouton[4][4]; //on crée notre grille de jeu
         for (int i = 0; i < 4; i++) { // Bouton[0][0] en bas à gauche
             for (int j = 0; j < 4; j++) {
                 BoutonJeu[i][j] = new Bouton(); // dimensions 4x4
@@ -396,13 +396,12 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     public void eteindreGrille() { //on eteint tous les boutons de la grille
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-               // BoutonJeu[i][j].vide = null;
                 GrilleJeu.EteindreBouton(i, j);
             }
         }
     }
     
-    public void MeilleurScore5() { // faire les mots par minute !!!
+    public void MeilleurScore5() { 
         String meilleursc_str=meilleur_score.getText(); //on récupère le texte stocké dans 'meilleur_score'
         String sc_str = scoreJoueur.getText(); //pareil avec scoreJoueur
         meilleursc = Integer.parseInt(meilleursc_str); //on transforme le string qu'on vient de récupérer en integer 
@@ -415,7 +414,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                 meilleur_score.setText(""+meilleursc); //on change l'affichage, on voit le meilleur score du joueur
     }
     
-    public void MeilleurScore15() { // faire les mots par minute !!!
+    public void MeilleurScore15() { 
         String meilleursc_str=meilleur_score.getText(); //on récupère le texte stocké dans 'meilleur_score'
         String sc_str = scoreJoueur.getText(); //pareil avec scoreJoueur
         meilleursc = Integer.parseInt(meilleursc_str); //on transforme le string qu'on vient de récupérer en integer 
@@ -428,7 +427,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                 meilleur_score.setText(""+meilleursc); //on change l'affichage, on voit le meilleur score du joueur
     }
     
-    public void MeilleurScore30() { // faire les mots par minute !!!
+    public void MeilleurScore30() { 
         String meilleursc_str=meilleur_score.getText(); //on récupère le texte stocké dans 'meilleur_score'
         String sc_str = scoreJoueur.getText(); //pareil avec scoreJoueur
         meilleursc = Integer.parseInt(meilleursc_str); //on transforme le string qu'on vient de récupérer en integer 
@@ -442,19 +441,17 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }
 
     public void FinPartie5() {
-        GrilleJeu.eteindreGrille();
-        lancement15.setVisible(true);
-        lancement5.setVisible(true);
+        GrilleJeu.eteindreGrille(); //on éteint la grille
+        lancement15.setVisible(true); // a la fin de chaque partie, on re rend visible les boutons afin de pouvoir soit lancer une nouvelle partie
+        lancement5.setVisible(true); // soit lancer une nouvelle partie
         lancement30.setVisible(true);
         Textlancemt.setVisible(true);
-        chgmtJoueur.setVisible(true);
+        chgmtJoueur.setVisible(true); //soit changer de joueur
         a_toi.setVisible(false);
         MeilleurScore5();
         panneau_grille.repaint();
-
-            
-        
     }
+    
     public void FinPartie15() {
         GrilleJeu.eteindreGrille();
         lancement15.setVisible(true);
@@ -495,12 +492,12 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             public void run() {
                 chronoJoueur.setText("" + time);
                 if (time == 0) {
-                    FinPartie5();
+                    FinPartie5(); //on arrete la partie à la fin des 5 secondes
                     cancel();// stoppe le chrono au bout de 5 s
                 }
-                time--;
+                time--; //le temps est à rebours
             }
-        }, 1000, 1000);
+        }, 1000, 1000); //permet de descendre à chaque seconde
         return true;
     }
 
