@@ -186,14 +186,14 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         info_joueur.add(pseudoJoueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, 30));
 
         meilleur_score.setText("meilleur");
-        info_joueur.add(meilleur_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 50, 30));
+        info_joueur.add(meilleur_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 20, 30));
 
         informations1.setFont(new java.awt.Font("Lucida Handwriting", 1, 12)); // NOI18N
         informations1.setText("Informations joueur :");
         info_joueur.add(informations1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 160, 40));
 
-        jLabel9.setText("clic par minute");
-        info_joueur.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, 30));
+        jLabel9.setText("clics par minute");
+        info_joueur.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, -1, 30));
 
         chgmtJoueur.setFont(new java.awt.Font("Lucida Calligraphy", 1, 11)); // NOI18N
         chgmtJoueur.setText("Changer de joueur");

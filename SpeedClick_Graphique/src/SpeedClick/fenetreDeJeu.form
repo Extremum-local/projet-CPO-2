@@ -266,7 +266,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="120" y="90" width="50" height="30"/>
+              <AbsoluteConstraints x="120" y="90" width="20" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -285,11 +285,11 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
-            <Property name="text" type="java.lang.String" value="clic par minute"/>
+            <Property name="text" type="java.lang.String" value="clics par minute"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="160" y="90" width="-1" height="30"/>
+              <AbsoluteConstraints x="140" y="90" width="-1" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
